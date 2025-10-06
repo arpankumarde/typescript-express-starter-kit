@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon",
-    "build": "tsc -p tsconfig.json",
+    "build": "npm run prisma:generate && tsc -p tsconfig.json",
     "start": "node dist/index.js",
-    "preinstall": "node -v"
+    "prisma:generate": "prisma generate --no-hints",
+    "preinstall": "node -v",
+    "postinstall": "npm run prisma:generate"
   },
   "dependencies": {
+    "@prisma/client": "6.16.3",
     "dotenv": "^17.2.3",
     "express": "^5.1.0"
   },
@@ -17,6 +20,7 @@
     "@types/express": "^5.0.3",
     "@types/node": "^24.7.0",
     "nodemon": "^3.1.10",
+    "prisma": "^6.16.3",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
