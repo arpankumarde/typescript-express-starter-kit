@@ -15,7 +15,6 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0"
   },
-  "packageManager": "pnpm@10.18.0",
   "devDependencies": {
     "@types/express": "^5.0.3",
     "@types/node": "^24.7.0",
